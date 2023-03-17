@@ -48,7 +48,7 @@ drop schema employee
  insert into players1 values('Parker',28000,1000)
  insert into players1 values('Peter',39000,1000)
  insert into players1 values('Haaland',23000,2000)
- insert into players1 values('Mee',13000,2000)
+
 
  select * from players1
 
