@@ -165,3 +165,4 @@ set identity_insert Students off
 insert into Students(sname,department) values ('Martin','BCA'),('Naren','BCA')
 
 select * from Students
+

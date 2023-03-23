@@ -60,17 +60,27 @@ insert into Orders values
 (70013,75.29,'2012-08-17',3003,5007),
 (70011,3045.6,'2012-04-25',3002,5001)
 
---1)From the above tables write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
+--1)From the above tables write a SQL query to find the salesperson 
+--and customer who reside in the same city. Return Salesman, 
+--cust_name and city.
 select salesman.name,customer.cust_name,salesman.city,customer.city from salesman inner join customer on salesman.city=customer.city
 
---2)From the above tables write a SQL query to find salespeople who received commissions of more than 12 percent from the company.Return Customer Name, customer city, Salesman, commission.
+--2)From the above tables write a SQL query to find salespeople 
+--who received commissions of more than 12 percent from the company.
+--Return Customer Name, customer city, Salesman, commission.
 select s.salesman_id,s.commission,c.cust_name,c.city from salesman as s inner join customer as c on s.salesman_id=c.salesman_id where commission > 0.12
 
---3)From the above tables write a SQL query to find the details of an order. Return ord_no, ord_date, purch_amt, Customer Name, grade, Salesman,commission.
+--3)From the above tables write a SQL query to 
+--find the details of an order. 
+--Return ord_no, ord_date, purch_amt, Customer Name, grade, Salesman,commission.
 select s.salesman_id,s.commission,c.cust_name,c.grade,o.ord_no,o.purch_amt,o.ord_date from salesman as s inner join customer as c on s.salesman_id = c.salesman_id inner join orders as o on c.customer_id=o.customer_id  
 
---4)From the above tables write a SQL query to find those orders where the order amount exists between 500 and 2000. Return ord_no, purch_amt,cust_name, city.
+--4)From the above tables write a SQL query to 
+--find those orders where the order amount exists between 500 and 2000.
+--Return ord_no, purch_amt,cust_name, city.
 select c.cust_name,c.city,o.ord_no,o.purch_amt from customer as c inner join Orders as o on c.customer_id = o.customer_id where purch_amt>500 and purch_amt<2000
 
---5)From the above tables write a SQL query to display the customer name,customer city, grade, salesman, salesman city. The results should besorted by ascending customer_id.
+--5)From the above tables write a SQL query to display the 
+--customer name,customer city, grade, salesman, salesman city.
+--The results should besorted by ascending customer_id.
 select c.cust_name,c.city,c.grade,s.salesman_id,s.city from salesman as s inner join customer as c on s.salesman_id=c.salesman_id order by c.customer_id
