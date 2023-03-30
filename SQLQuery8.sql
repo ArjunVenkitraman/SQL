@@ -94,3 +94,4 @@ when not matched by target
 		then delete;
 
 UPDATE Student set studentname='Ram' where studentid=10
+
